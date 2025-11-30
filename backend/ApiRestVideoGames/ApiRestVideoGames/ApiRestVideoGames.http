@@ -1,0 +1,6 @@
+@ApiRestVideoGames_HostAddress = http://localhost:5125
+
+GET {{ApiRestVideoGames_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

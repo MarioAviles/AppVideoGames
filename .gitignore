@@ -1,0 +1,34 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.db
+*.opendb
+*.VCTargetsPath
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# Publish
+publish/
+*.pubxml
+
+# MAUI
+**/Platforms/
+*.xcuserstate
+*.DS_Store
+
+# Backup
+*.orig
+
+# Test results
+TestResults/
+*.trx
