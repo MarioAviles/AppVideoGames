@@ -1,11 +1,14 @@
 ﻿using ApiRestVideoGames.Models;
 using ApiRestVideoGames.Persistence;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiRestVideoGames.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
+
     public class VideoGameController : ControllerBase
     {
         private readonly IVideoGameRepository _repo;
