@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-
 namespace ApiRestVideoGames
 {
     public class Program
@@ -16,7 +15,16 @@ namespace ApiRestVideoGames
 
             // Add services to the container.
 
-            builder.Services.AddSingleton<IVideoGameRepository, MemoryVideoGameRepository>();
+            var mode = builder.Configuration["Persistence:Mode"];
+
+            if (mode == "MySQL")
+            {
+                builder.Services.AddSingleton<IVideoGameRepository, MySqlVideoGameRepository>();
+            }
+            else
+            {
+                builder.Services.AddSingleton<IVideoGameRepository, MemoryVideoGameRepository>();
+            }
             builder.Services.AddSingleton<ImportService>();
             builder.Services.AddSingleton<IUserRepository, MemoryUserRepository>();
 

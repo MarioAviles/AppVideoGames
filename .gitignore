@@ -32,3 +32,9 @@ publish/
 # Test results
 TestResults/
 *.trx
+
+# Configuración sensible
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
