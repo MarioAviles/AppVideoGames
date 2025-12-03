@@ -51,7 +51,7 @@ namespace ApiRestVideoGames.Persistence
             using var conn = new MySqlConnection(_connectionString);
             await conn.OpenAsync();
 
-            var cmd = new MySqlCommand("SELECT * FROM VideoGames WHERE Rank=@id", conn);
+            var cmd = new MySqlCommand("SELECT * FROM VideoGames WHERE `Rank`=@id", conn);
             cmd.Parameters.AddWithValue("@id", id);
 
             using var reader = await cmd.ExecuteReaderAsync();
@@ -149,7 +149,7 @@ namespace ApiRestVideoGames.Persistence
             using var conn = new MySqlConnection(_connectionString);
             await conn.OpenAsync();
 
-            var cmd = new MySqlCommand("DELETE FROM VideoGames WHERE Rank=@id", conn);
+            var cmd = new MySqlCommand("DELETE FROM VideoGames WHERE `Rank`=@id", conn);
             cmd.Parameters.AddWithValue("@id", id);
 
             await cmd.ExecuteNonQueryAsync();
